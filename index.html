@@ -1,0 +1,774 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Awais Traders | Chauntra, Rawalpindi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            DEFAULT: '#F9F7F2',
+                            card: '#F4F0E6',
+                            border: '#E8E2D5',
+                        },
+                        navy: {
+                            DEFAULT: '#182846',
+                            dark: '#0F1A30',
+                            light: '#24385E',
+                        },
+                        magenta: {
+                            DEFAULT: '#D8295A',
+                            hover: '#B81D47',
+                        },
+                        gold: {
+                            DEFAULT: '#F3D26B',
+                            hover: '#E5C153',
+                        },
+                        cat: {
+                            baby: '#FDF2F4',
+                            tissues: '#F0F6FB',
+                            cleaning: '#FAF6E9',
+                            personal: '#F0F7F4',
+                            oral: '#F2F4FB',
+                            home: '#FDF2F7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F9F7F2;
+            color: #182846;
+        }
+        .w-underline {
+            text-decoration-color: #F3D26B;
+            text-decoration-thickness: 4px;
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-pink-100 selection:text-magenta pb-24 lg:pb-0">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-navy text-white text-[11px] sm:text-xs font-bold tracking-widest uppercase text-center py-2 px-4 border-b border-navy-light/30">
+        YOUR NEIGHBOURHOOD STORE · CHAUNTRA, RAWALPINDI
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-cream-border transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
+            <!-- Brand Logo & Name -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center p-1 overflow-hidden group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full rounded-full bg-navy flex items-center justify-center text-white font-extrabold text-sm">
+                        MAT
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-extrabold text-navy tracking-tight leading-tight">Malik Awais</h1>
+                    <p class="text-[10px] font-bold tracking-widest text-magenta uppercase">TRADERS</p>
+                </div>
+            </a>
+
+            <!-- Right Actions -->
+            <div class="flex items-center space-x-3">
+                <a href="tel:+923002658656" class="hidden md:flex items-center space-x-1.5 text-xs font-bold text-navy hover:text-magenta transition">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>+92 300 2658656</span>
+                </a>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCartDrawer()" class="bg-navy hover:bg-navy-dark text-white px-4 py-2 rounded-full font-bold text-xs sm:text-sm flex items-center space-x-2 shadow-sm transition">
+                    <i class="fa-solid fa-bag-shopping text-gold"></i>
+                    <span>Cart</span>
+                    <span id="cart-badge" class="bg-magenta text-white text-[11px] font-extrabold px-2 py-0.5 rounded-full">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-10 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Hero Left Text Content -->
+            <div class="lg:col-span-7 space-y-6 text-center sm:text-left">
+                <!-- Location Pill Badge -->
+                <div class="inline-flex items-center space-x-2 bg-white border border-gray-200 shadow-sm px-4 py-1.5 rounded-full text-xs font-bold text-navy">
+                    <span class="w-2 h-2 rounded-full bg-magenta"></span>
+                    <span class="tracking-wide uppercase text-[11px]">THE FAMILY STORE ON ADIALA ROAD</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-navy leading-[1.1] tracking-tight">
+                    Everyday needs.<br>
+                    <span class="underline decoration-gold decoration-4 underline-offset-4">Right close</span> to home.
+                </h2>
+
+                <!-- Subheading -->
+                <p class="text-base sm:text-lg text-gray-600 max-w-xl font-medium leading-relaxed">
+                    From baby care and tissues to cleaning and personal care, find the useful little things your home runs on.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                    <a href="#catalog-section" class="w-full sm:w-auto bg-magenta hover:bg-magenta-hover text-white font-bold px-7 py-3.5 rounded-full text-sm sm:text-base flex items-center justify-center space-x-2 shadow-lg shadow-magenta/20 transition transform hover:-translate-y-0.5">
+                        <span>Browse the online catalog</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <a href="https://wa.me/923002658656?text=AoA%20Malik%20Awais%20Traders,%20I%20want%20to%20inquire%20about%20your%20products." target="_blank" class="w-full sm:w-auto bg-white hover:bg-gray-50 border border-gray-300 text-navy font-bold px-6 py-3.5 rounded-full text-sm flex items-center justify-center space-x-2 shadow-sm transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Right Showcase Visual Box -->
+            <div class="lg:col-span-5">
+                <div class="bg-gradient-to-b from-navy to-navy-dark rounded-3xl p-6 text-white shadow-xl relative overflow-hidden">
+                    <!-- Top Pill Tags -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/10 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 border border-white/10">
+                            <i class="fa-solid fa-bag-shopping text-pink-300"></i> Delivery or takeaway
+                        </span>
+                        <span class="bg-white/10 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 border border-white/10">
+                            <i class="fa-solid fa-location-dot text-gold"></i> 33km Adiala Road
+                        </span>
+                    </div>
+
+                    <!-- Visual Poster Mockup -->
+                    <div class="bg-white rounded-2xl p-4 text-navy shadow-lg relative overflow-hidden border border-white/20">
+                        <div class="text-center py-4 space-y-2">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-magenta bg-pink-50 px-2.5 py-1 rounded-full">Quality Products at Best Prices</span>
+                            <h3 class="text-2xl font-black text-navy leading-tight">Malik Awais Traders</h3>
+                            <p class="text-xs font-semibold text-gray-500">♥ Your Family Store ♥</p>
+                        </div>
+
+                        <!-- Brand Products Showcase Tags -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4">
+                            <div class="bg-purple-50 p-2 rounded-xl text-center">
+                                <span class="text-lg">👶</span>
+                                <p class="text-[10px] font-bold text-purple-900 mt-1">Romper Diapers</p>
+                            </div>
+                            <div class="bg-blue-50 p-2 rounded-xl text-center">
+                                <span class="text-lg">🧻</span>
+                                <p class="text-[10px] font-bold text-blue-900 mt-1">Tissues & Wipes</p>
+                            </div>
+                            <div class="bg-emerald-50 p-2 rounded-xl text-center">
+                                <span class="text-lg">🧼</span>
+                                <p class="text-[10px] font-bold text-emerald-900 mt-1">Cleaning Essentials</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-navy text-white text-center py-2.5 rounded-xl text-xs font-bold">
+                            SHOP LOCAL, SHOP SIMPLY
+                        </div>
+                    </div>
+
+                    <!-- Floating Item Counter Badge -->
+                    <div class="absolute bottom-4 right-4 bg-cream text-navy rounded-2xl p-3 shadow-2xl border border-cream-border flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-xl bg-gold flex items-center justify-center font-bold text-navy">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-extrabold leading-none">81+ Items</p>
+                            <p class="text-[10px] text-gray-500 font-semibold mt-0.5">in the live catalog</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CATEGORIES SECTION ("The everyday shelf, all in one place.") -->
+    <section class="py-12 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+        <div class="space-y-1 mb-8">
+            <span class="text-[11px] font-extrabold uppercase tracking-widest text-magenta">A LITTLE OF WHAT YOU NEED</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">The everyday shelf, all in one place.</h2>
+            <p class="text-sm text-gray-600 font-medium">Browse a selection of home and personal essentials. Check the live catalog for current ranges.</p>
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="relative max-w-xl mb-8">
+            <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Find a category or item, like tissues or baby care..." 
+                   class="w-full bg-white border border-gray-300 rounded-2xl pl-12 pr-28 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy shadow-sm transition">
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-gray-400 text-base"></i>
+            <button onclick="filterProducts()" class="absolute right-2 top-2 bg-navy hover:bg-navy-dark text-white px-5 py-1.5 rounded-xl text-xs font-bold transition">
+                Search
+            </button>
+        </div>
+
+        <!-- 6 CATEGORIES GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="categories-grid">
+            
+            <!-- 01 Baby Care -->
+            <div onclick="selectCategory('baby')" class="cat-card cursor-pointer bg-cat-baby border border-pink-100 rounded-2xl p-5 hover:shadow-md transition group relative overflow-hidden" data-cat="baby">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-[11px] font-extrabold text-pink-400">01 / 06</span>
+                    <div class="w-10 h-10 rounded-2xl bg-white/80 flex items-center justify-center text-pink-500 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-baby text-lg"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-extrabold text-navy group-hover:text-magenta transition">Baby care</h3>
+                <p class="text-xs text-gray-600 font-medium mt-1">Everyday care for little ones (Diapers, Wipes & Pants)</p>
+                <div class="mt-4 flex items-center text-xs font-bold text-magenta">
+                    <span>View items</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+
+            <!-- 02 Tissues & Wipes -->
+            <div onclick="selectCategory('tissues')" class="cat-card cursor-pointer bg-cat-tissues border border-blue-100 rounded-2xl p-5 hover:shadow-md transition group relative overflow-hidden" data-cat="tissues">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-[11px] font-extrabold text-blue-400">02 / 06</span>
+                    <div class="w-10 h-10 rounded-2xl bg-white/80 flex items-center justify-center text-blue-500 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-box text-lg"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-extrabold text-navy group-hover:text-blue-600 transition">Tissues & wipes</h3>
+                <p class="text-xs text-gray-600 font-medium mt-1">Softness for home and on the go (Royal Ozone, Fluffy)</p>
+                <div class="mt-4 flex items-center text-xs font-bold text-blue-600">
+                    <span>View items</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+
+            <!-- 03 Cleaning Essentials -->
+            <div onclick="selectCategory('cleaning')" class="cat-card cursor-pointer bg-cat-cleaning border border-yellow-100 rounded-2xl p-5 hover:shadow-md transition group relative overflow-hidden" data-cat="cleaning">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-[11px] font-extrabold text-yellow-600">03 / 06</span>
+                    <div class="w-10 h-10 rounded-2xl bg-white/80 flex items-center justify-center text-yellow-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-broom text-lg"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-extrabold text-navy group-hover:text-yellow-700 transition">Cleaning essentials</h3>
+                <p class="text-xs text-gray-600 font-medium mt-1">Products to keep things fresh (Detergents, Sprays)</p>
+                <div class="mt-4 flex items-center text-xs font-bold text-yellow-700">
+                    <span>View items</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+
+            <!-- 04 Personal Care -->
+            <div onclick="selectCategory('personal')" class="cat-card cursor-pointer bg-cat-personal border border-emerald-100 rounded-2xl p-5 hover:shadow-md transition group relative overflow-hidden" data-cat="personal">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-[11px] font-extrabold text-emerald-500">04 / 06</span>
+                    <div class="w-10 h-10 rounded-2xl bg-white/80 flex items-center justify-center text-emerald-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart text-lg"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-extrabold text-navy group-hover:text-emerald-700 transition">Personal care</h3>
+                <p class="text-xs text-gray-600 font-medium mt-1">Daily essentials, all in one place (Creams, Hair Color)</p>
+                <div class="mt-4 flex items-center text-xs font-bold text-emerald-700">
+                    <span>View items</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+
+            <!-- 05 Oral Care -->
+            <div onclick="selectCategory('oral')" class="cat-card cursor-pointer bg-cat-oral border border-indigo-100 rounded-2xl p-5 hover:shadow-md transition group relative overflow-hidden" data-cat="oral">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-[11px] font-extrabold text-indigo-400">05 / 06</span>
+                    <div class="w-10 h-10 rounded-2xl bg-white/80 flex items-center justify-center text-indigo-500 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-sparkles text-lg"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-extrabold text-navy group-hover:text-indigo-600 transition">Oral care</h3>
+                <p class="text-xs text-gray-600 font-medium mt-1">Simple everyday care (Toothpaste, Brushes, Floss)</p>
+                <div class="mt-4 flex items-center text-xs font-bold text-indigo-600">
+                    <span>View items</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+
+            <!-- 06 Home & More -->
+            <div onclick="selectCategory('home')" class="cat-card cursor-pointer bg-cat-home border border-pink-100 rounded-2xl p-5 hover:shadow-md transition group relative overflow-hidden" data-cat="home">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-[11px] font-extrabold text-pink-500">06 / 06</span>
+                    <div class="w-10 h-10 rounded-2xl bg-white/80 flex items-center justify-center text-pink-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cubes text-lg"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-extrabold text-navy group-hover:text-pink-700 transition">Home & more</h3>
+                <p class="text-xs text-gray-600 font-medium mt-1">Useful little things for the household (Utility, Tape, Traps)</p>
+                <div class="mt-4 flex items-center text-xs font-bold text-pink-700">
+                    <span>View items</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIVE CATALOG SECTION (Product Grid) -->
+    <section id="catalog-section" class="py-12 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+        
+        <!-- Section Header & Filter Pills -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 border-b border-cream-border pb-6">
+            <div>
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-magenta">LIVE STORE CATALOG</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-navy">Browse & Select Products</h2>
+            </div>
+
+            <!-- Quick Filter Tabs -->
+            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+                <button onclick="selectCategory('all')" id="filter-all" class="filter-btn bg-navy text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition">All Items</button>
+                <button onclick="selectCategory('baby')" id="filter-baby" class="filter-btn bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition">Baby Care</button>
+                <button onclick="selectCategory('tissues')" id="filter-tissues" class="filter-btn bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition">Tissues</button>
+                <button onclick="selectCategory('cleaning')" id="filter-cleaning" class="filter-btn bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition">Cleaning</button>
+                <button onclick="selectCategory('personal')" id="filter-personal" class="filter-btn bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition">Personal Care</button>
+            </div>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            <!-- Dynamic products added via JS -->
+        </div>
+
+        <!-- Empty Filter State -->
+        <div id="empty-state" class="hidden text-center py-16 bg-white rounded-3xl border border-cream-border">
+            <i class="fa-solid fa-box-open text-4xl text-gray-300 mb-3"></i>
+            <p class="text-navy font-bold text-base">No items found matching your search</p>
+            <p class="text-xs text-gray-500 mt-1">Try searching for diapers, tissues, wipes, or select "All Items".</p>
+            <button onclick="selectCategory('all')" class="mt-4 bg-navy text-white text-xs font-bold px-5 py-2 rounded-full">Reset Filters</button>
+        </div>
+    </section>
+
+    <!-- LIVE CATALOG BANNER CALLOUT -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 my-8">
+        <div class="bg-navy rounded-3xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-2xl bg-gold text-navy flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black">See what's available today</h3>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-1">81 items listed on our live ordering catalog for household & store requirements.</p>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/923002658656?text=AoA%20Malik%20Awais%20Traders,%20please%20send%20me%20the%20complete%20catalog%20and%20rates." target="_blank" 
+               class="shrink-0 bg-gold hover:bg-gold-hover text-navy font-extrabold px-6 py-3.5 rounded-full text-sm flex items-center space-x-2 shadow transition">
+                <span>View live catalog</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT & LOCATION SECTION ("Good essentials. Good people nearby.") -->
+    <section class="py-12 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+        <div class="bg-cream-card border border-cream-border rounded-3xl p-6 sm:p-10">
+            <div class="max-w-2xl space-y-4">
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-magenta">A LOCAL STOP FOR DAILY NEEDS</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy leading-tight">Good essentials.<br>Good people nearby.</h2>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                    <strong class="text-navy">Malik Awais Traders</strong> serves Chauntra and the surrounding community from <strong class="text-navy">33km Adiala Road</strong>. Shop in person, choose takeaway or delivery, or browse the online catalog from wherever you are.
+                </p>
+
+                <div class="pt-2">
+                    <a href="https://facebook.com" target="_blank" class="inline-flex items-center space-x-2 text-xs font-extrabold text-navy border-b-2 border-magenta pb-1 hover:text-magenta transition">
+                        <i class="fa-brands fa-facebook text-sm text-blue-600"></i>
+                        <span>Find us on Facebook</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Action Info Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+                
+                <div class="bg-white p-5 rounded-2xl border border-cream-border shadow-sm">
+                    <div class="w-8 h-8 rounded-full bg-gold/30 text-navy flex items-center justify-center text-xs font-bold mb-3">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="font-extrabold text-navy text-sm">Wholesale & retail</h4>
+                    <p class="text-xs text-gray-600 mt-1">Serving households and local shops with competitive pricing.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-cream-border shadow-sm">
+                    <div class="w-8 h-8 rounded-full bg-pink-100 text-magenta flex items-center justify-center text-xs font-bold mb-3">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h4 class="font-extrabold text-navy text-sm">Here for the everyday</h4>
+                    <p class="text-xs text-gray-600 mt-1">A local neighbourhood store for all the everyday things you use.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-cream-border shadow-sm sm:col-span-2 lg:col-span-1">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold mb-3">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h4 class="font-extrabold text-navy text-sm">Doorstep Delivery</h4>
+                    <p class="text-xs text-gray-600 mt-1">Quick dispatch and delivery available along Adiala Road and Chauntra.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT SECTION ("We're just down the road.") -->
+    <footer class="bg-navy text-white pt-14 pb-12 px-4 sm:px-6 mt-auto">
+        <div class="max-w-6xl mx-auto space-y-10">
+            
+            <!-- Contact Header -->
+            <div class="space-y-3 max-w-xl">
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-gold">COME BY OR GET IN TOUCH</span>
+                <h2 class="text-3xl sm:text-5xl font-black leading-none">We're just down the road.</h2>
+                <p class="text-xs sm:text-sm text-gray-300 font-medium">
+                    Find Malik Awais Traders at 33km Adiala Road, Chauntra, Rawalpindi. Delivery or takeaway available.
+                </p>
+            </div>
+
+            <!-- Action Buttons Row -->
+            <div class="flex flex-wrap gap-3">
+                <a href="https://maps.google.com/?q=33km+Adiala+Road+Chauntra+Rawalpindi" target="_blank" class="bg-gold hover:bg-gold-hover text-navy font-extrabold px-6 py-3.5 rounded-full text-xs sm:text-sm flex items-center space-x-2 shadow transition">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Get directions</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+
+                <a href="tel:+923002658656" class="border border-white/30 hover:bg-white/10 text-white font-extrabold px-6 py-3.5 rounded-full text-xs sm:text-sm flex items-center space-x-2 transition">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+92 300 2658656</span>
+                </a>
+            </div>
+
+            <!-- Store Address Card -->
+            <div class="bg-navy-dark/70 border border-white/10 rounded-3xl p-6 sm:p-8 max-w-lg space-y-4">
+                <div class="flex items-center space-x-2 text-gold text-xs font-extrabold tracking-widest uppercase">
+                    <i class="fa-solid fa-shop"></i>
+                    <span>VISIT OUR STORE</span>
+                </div>
+
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                    33km Adiala Road<br>Chauntra, Rawalpindi
+                </h3>
+
+                <div class="bg-cream text-navy rounded-2xl p-4 flex items-center justify-between">
+                    <div>
+                        <p class="text-[10px] font-extrabold uppercase tracking-wider text-gray-500">TALK TO US</p>
+                        <p class="text-sm font-extrabold text-navy mt-0.5">+92 300 2658656</p>
+                    </div>
+                    <a href="https://wa.me/923002658656" target="_blank" class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg hover:scale-105 transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Links -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+                <div class="flex items-center space-x-3">
+                    <div class="w-6 h-6 rounded-full bg-white text-navy flex items-center justify-center font-bold text-[10px]">MAT</div>
+                    <span class="font-bold text-white">Malik Awais Traders</span>
+                    <span>· Chauntra, Rawalpindi</span>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#catalog-section" class="hover:text-white transition">Online catalog</a>
+                    <a href="https://facebook.com" target="_blank" class="hover:text-white transition">Facebook</a>
+                    <a href="https://wa.me/923002658656" target="_blank" class="hover:text-white transition">WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE BOTTOM BAR -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream/95 backdrop-blur-md border-t border-cream-border p-3 shadow-2xl">
+        <div class="grid grid-cols-2 gap-2 max-w-md mx-auto">
+            <a href="https://wa.me/923002658656?text=AoA%20Malik%20Awais%20Traders,%20I%20have%20an%20inquiry." target="_blank" 
+               class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-extrabold py-3 px-4 rounded-full text-xs flex items-center justify-center space-x-2 transition">
+                <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+                <span>WhatsApp</span>
+            </a>
+
+            <a href="#catalog-section" class="bg-magenta hover:bg-magenta-hover text-white font-extrabold py-3 px-4 rounded-full text-xs flex items-center justify-center space-x-1.5 shadow-md shadow-magenta/20 transition">
+                <span>Browse catalog</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- CART SIDE DRAWER -->
+    <div id="cart-drawer-overlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-navy-dark/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    
+    <div id="cart-drawer" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-cream z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Drawer Header -->
+        <div class="bg-navy text-white p-5 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-bag-shopping text-gold"></i>
+                <h3 class="font-extrabold text-base">Your Selected Items</h3>
+            </div>
+            <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Order List -->
+        <div id="cart-container" class="flex-grow overflow-y-auto p-4 space-y-3">
+            <!-- Dynamic Cart Items -->
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-5 bg-white border-t border-cream-border space-y-3">
+            <div class="flex justify-between items-center text-xs font-bold text-gray-600">
+                <span>Total Items Selected:</span>
+                <span id="cart-total-count" class="text-navy font-extrabold text-sm">0</span>
+            </div>
+
+            <button onclick="sendWhatsAppOrder()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-full text-sm flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/20 transition">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Order via WhatsApp</span>
+            </button>
+
+            <button onclick="clearCart()" class="w-full text-[11px] font-bold text-gray-400 hover:text-magenta text-center transition py-1">
+                Clear Selection
+            </button>
+        </div>
+    </div>
+
+    <!-- APPLICATION SCRIPT LOGIC -->
+    <script>
+        // OFFICIAL PRODUCTS CATALOG DATA
+        const productsData = [
+            { id: 1, name: "Romper Baby Diapers", category: "baby", pack: "Jumbo Pack / Carton", tag: "Baby Care", icon: "👶" },
+            { id: 2, name: "Rocket Baby Pants", category: "baby", pack: "Box / Master Pack", tag: "Baby Care", icon: "🍼" },
+            { id: 3, name: "Mehrab Baby Wet Wipes", category: "baby", pack: "72 Wipes Pack / Box", tag: "Baby Wipes", icon: "🧻" },
+            { id: 4, name: "Royal Ozone Premium Tissues", category: "tissues", pack: "Pack of 10 / Carton", tag: "Tissues", icon: "🧻" },
+            { id: 5, name: "Fluffy Soft Tissue Rolls", category: "tissues", pack: "Multi-roll Pack", tag: "Tissues", icon: "🧻" },
+            { id: 6, name: "Surf Excel Detergent", category: "cleaning", pack: "Kilogram Packs / Dozen", tag: "Cleaning", icon: "🧼" },
+            { id: 7, name: "Power Insect Killer Spray", category: "cleaning", pack: "400ml Can / Carton", tag: "Insecticide", icon: "🪰" },
+            { id: 8, name: "Hair Color Creams", category: "personal", pack: "Dozen Pack / Box", tag: "Personal Care", icon: "💇" },
+            { id: 9, name: "Vaseline Petroleum Jelly", category: "personal", pack: "Pack of 12 Jars", tag: "Skincare", icon: "✨" },
+            { id: 10, name: "Colgate Toothpaste", category: "oral", pack: "Box of 12 Tubes", tag: "Oral Care", icon: "🪥" },
+            { id: 11, name: "Heavy Duty PVC Electrical Tape", category: "home", pack: "Pack of 10 Rolls", tag: "Utility", icon: "🔌" },
+            { id: 12, name: "Metal Mouse Trap Cages", category: "home", pack: "Dozen Pack", tag: "Utility", icon: "🪤" },
+            { id: 13, name: "Toothpicks Container Box", category: "home", pack: "Master Carton", tag: "Household", icon: "🍽️" },
+            { id: 14, name: "Soft Cotton Buds Swabs", category: "personal", pack: "Pack of 100s / Box", tag: "Hygiene", icon: "👂" }
+        ];
+
+        let cart = [];
+        let activeCategory = 'all';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(productsData);
+            loadCart();
+        });
+
+        // RENDER PRODUCTS GRID
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            const emptyState = document.getElementById('empty-state');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            items.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-white border border-cream-border rounded-2xl p-4 flex flex-col justify-between hover:border-navy hover:shadow-md transition duration-200 group";
+
+                card.innerHTML = `
+                    <div>
+                        <div class="bg-cream-card rounded-xl h-36 mb-3 flex items-center justify-center text-4xl group-hover:scale-105 transition-transform">
+                            ${product.icon}
+                        </div>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-magenta bg-pink-50 px-2 py-0.5 rounded-md">${product.tag}</span>
+                        <h3 class="font-extrabold text-navy text-base mt-2 leading-snug">${product.name}</h3>
+                        <p class="text-xs text-gray-500 font-medium mt-1">${product.pack}</p>
+                    </div>
+
+                    <div class="mt-5 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md">
+                            <i class="fa-solid fa-tag mr-0.5"></i> Wholesale / Retail
+                        </span>
+                        <button onclick="addToCart(${product.id})" class="bg-navy hover:bg-navy-dark text-white text-xs font-extrabold px-3.5 py-2 rounded-full transition flex items-center space-x-1 shadow-sm">
+                            <i class="fa-solid fa-plus text-[10px]"></i>
+                            <span>Add</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // CATEGORY & SEARCH FILTERING
+        function selectCategory(category) {
+            activeCategory = category;
+
+            // Update UI filter pills
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition";
+            });
+
+            const activeBtn = document.getElementById(`filter-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "filter-btn bg-navy text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition";
+            }
+
+            filterProducts();
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            
+            const filtered = productsData.filter(p => {
+                const matchesCategory = (activeCategory === 'all') || (p.category === activeCategory);
+                const matchesSearch = p.name.toLowerCase().includes(query) || 
+                                      p.pack.toLowerCase().includes(query) || 
+                                      p.tag.toLowerCase().includes(query);
+                return matchesCategory && matchesSearch;
+            });
+
+            renderProducts(filtered);
+        }
+
+        // CART MANAGEMENT
+        function addToCart(id) {
+            const product = productsData.find(p => p.id === id);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ id: product.id, name: product.name, pack: product.pack, qty: 1 });
+            }
+
+            saveCart();
+            updateCartUI();
+        }
+
+        function updateQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            saveCart();
+            updateCartUI();
+        }
+
+        function clearCart() {
+            cart = [];
+            saveCart();
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-container');
+            const totalCountEl = document.getElementById('cart-total-count');
+            const badgeEl = document.getElementById('cart-badge');
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            badgeEl.innerText = totalQty;
+            totalCountEl.innerText = totalQty;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16 text-gray-400 space-y-2">
+                        <i class="fa-solid fa-bag-shopping text-4xl text-gray-300"></i>
+                        <p class="text-xs font-bold text-navy">Your list is empty</p>
+                        <p class="text-[11px] text-gray-500">Add products from the catalog to inquiry.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = '';
+            cart.forEach(item => {
+                const row = document.createElement('div');
+                row.className = "bg-white p-3.5 rounded-2xl border border-cream-border flex items-center justify-between shadow-sm";
+                row.innerHTML = `
+                    <div>
+                        <h4 class="font-extrabold text-navy text-xs">${item.name}</h4>
+                        <p class="text-[10px] text-gray-500 mt-0.5">${item.pack}</p>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-cream px-2 py-1 rounded-xl border border-cream-border">
+                        <button onclick="updateQty(${item.id}, -1)" class="w-5 h-5 rounded-md bg-white text-navy font-extrabold text-xs shadow-sm flex items-center justify-center">-</button>
+                        <span class="text-xs font-extrabold text-navy px-1">${item.qty}</span>
+                        <button onclick="updateQty(${item.id}, 1)" class="w-5 h-5 rounded-md bg-white text-navy font-extrabold text-xs shadow-sm flex items-center justify-center">+</button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-drawer-overlay');
+            drawer.classList.toggle('translate-x-full');
+            overlay.classList.toggle('opacity-0');
+            overlay.classList.toggle('pointer-events-none');
+        }
+
+        function saveCart() {
+            localStorage.setItem('mat_official_cart', JSON.stringify(cart));
+        }
+
+        function loadCart() {
+            const saved = localStorage.getItem('mat_official_cart');
+            if (saved) {
+                try { cart = JSON.parse(saved); } catch (e) { cart = []; }
+            }
+            updateCartUI();
+        }
+
+        // WHATSAPP ORDER SUBMISSION (+92 300 2658656)
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert("Please select at least one product before sending your order.");
+                return;
+            }
+
+            let msg = `*ORDER INQUIRY - MALIK AWAIS TRADERS*\n`;
+            msg += `📍 *Store Location:* 33km Adiala Road, Chauntra, Rawalpindi\n`;
+            msg += `-----------------------------------\n`;
+            cart.forEach((item, idx) => {
+                msg += `${idx + 1}. *${item.name}*\n   Quantity: ${item.qty} (${item.pack})\n`;
+            });
+            msg += `-----------------------------------\n`;
+            msg += `Please send rate details and availability for these items.`;
+
+            const phone = "923002658656";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+```
